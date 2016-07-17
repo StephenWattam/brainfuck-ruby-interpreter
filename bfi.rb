@@ -7,10 +7,8 @@ $instructions = []
 # Load data
 def read_instructions(filename)
   f = File.open(filename) 
-  c = f.getc
-  while(c)
+  while(c = f.getc)
     $instructions << c if "<>+-[],.".include?(c)
-    c = f.getc
   end
   f.close
 end
